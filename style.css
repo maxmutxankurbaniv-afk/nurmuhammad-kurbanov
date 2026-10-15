@@ -1,0 +1,432 @@
+/* ============================
+   NURMUHAMMAD KURBANOV — STYLE
+   ============================ */
+
+/* --- Reset & Base --- */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:#05080f;
+    color:#c8d0dd;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%;display:block}
+
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* --- Utility --- */
+.gradient-text{
+    background:linear-gradient(135deg,#00aaff,#0044ff,#7c3aed);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ============================
+   NAVBAR
+   ============================ */
+.navbar{
+    position:fixed;top:0;left:0;width:100%;z-index:999;
+    background:rgba(5,8,15,.8);
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.04);
+}
+.nav-container{
+    max-width:1120px;margin:0 auto;padding:0 24px;
+    display:flex;align-items:center;justify-content:space-between;
+    height:62px;
+}
+.logo{font-size:1.7rem;font-weight:900;color:#fff;letter-spacing:1px}
+.logo span{color:#0088ff}
+
+.nav-links{display:flex;gap:26px}
+.nav-links a{
+    font-size:.88rem;font-weight:500;color:#8896ad;
+    transition:color .25s;letter-spacing:.3px;
+}
+.nav-links a:hover{color:#4da6ff}
+
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001}
+.hamburger span{display:block;width:24px;height:2.5px;background:#fff;border-radius:4px;transition:.3s}
+
+/* ============================
+   HERO
+   ============================ */
+.hero{
+    min-height:100vh;display:flex;align-items:center;
+    padding:100px 24px 60px;
+    position:relative;overflow:hidden;
+}
+
+/* Glow blobs */
+.hero-glow{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;opacity:.3}
+.hero-glow--1{width:500px;height:500px;background:#0066ff;top:-120px;right:-80px;animation:drift 10s ease-in-out infinite}
+.hero-glow--2{width:350px;height:350px;background:#7c3aed;bottom:-60px;left:-60px;animation:drift 12s ease-in-out infinite reverse}
+.hero-glow--3{width:200px;height:200px;background:#00ccff;top:40%;left:30%;animation:drift 14s ease-in-out infinite}
+
+@keyframes drift{
+    0%,100%{transform:translate(0,0) scale(1)}
+    50%{transform:translate(20px,-30px) scale(1.08)}
+}
+
+.hero-content{
+    max-width:1120px;margin:0 auto;width:100%;
+    display:grid;grid-template-columns:1fr 1fr;
+    align-items:center;gap:40px;
+    position:relative;z-index:2;
+}
+
+/* Hero Text */
+.hero-text{display:flex;flex-direction:column;gap:12px}
+.hero-greeting{
+    font-size:.95rem;color:#4da6ff;text-transform:uppercase;
+    letter-spacing:3px;font-weight:600;
+}
+.hero-name{
+    font-size:clamp(2.4rem,5.5vw,4.2rem);
+    font-weight:900;color:#fff;line-height:1.1;
+}
+.hero-role{
+    font-size:1.05rem;color:#6a90c2;font-weight:500;
+    margin-top:4px;
+}
+.hero-tagline{
+    font-size:.92rem;color:#5a6f8a;line-height:1.6;
+}
+.hero-buttons{display:flex;gap:14px;margin-top:12px;flex-wrap:wrap}
+
+/* Buttons */
+.btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:13px 30px;border-radius:50px;font-size:.92rem;font-weight:600;
+    cursor:pointer;border:none;transition:all .3s;
+}
+.btn-primary{
+    background:linear-gradient(135deg,#0066ff,#0044dd);
+    color:#fff;
+    box-shadow:0 4px 20px rgba(0,102,255,.3);
+}
+.btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 28px rgba(0,102,255,.45);
+}
+.btn-outline{
+    border:2px solid rgba(0,102,255,.35);color:#4da6ff;background:transparent;
+}
+.btn-outline:hover{background:rgba(0,102,255,.08);border-color:#4da6ff}
+
+/* Hero Socials */
+.hero-socials{display:flex;gap:14px;margin-top:8px}
+.social-circle{
+    width:44px;height:44px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+    transition:all .3s;color:#8896ad;
+}
+.social-circle svg{width:20px;height:20px;fill:currentColor}
+.social--ig:hover{background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);color:#fff;transform:translateY(-3px);box-shadow:0 4px 16px rgba(220,39,67,.35)}
+.social--yt:hover{background:#f00;color:#fff;transform:translateY(-3px);box-shadow:0 4px 16px rgba(255,0,0,.35)}
+.social--tg:hover{background:#0088cc;color:#fff;transform:translateY(-3px);box-shadow:0 4px 16px rgba(0,136,204,.35)}
+
+/* Hero Image */
+.hero-image{display:flex;justify-content:center;align-items:center}
+.hero-img-wrapper{
+    width:100%;max-width:480px;
+    border-radius:20px;overflow:hidden;
+    border:2px solid rgba(0,102,255,.2);
+    box-shadow:0 0 60px rgba(0,102,255,.15),0 0 120px rgba(0,102,255,.05);
+    transition:box-shadow .4s;
+}
+.hero-img-wrapper:hover{
+    box-shadow:0 0 80px rgba(0,102,255,.25),0 0 160px rgba(0,102,255,.1);
+}
+.hero-img-wrapper img{width:100%;display:block}
+
+/* ============================
+   SECTIONS
+   ============================ */
+.section{padding:100px 0}
+.section--dark{background:#080c16}
+
+.section-title{
+    text-align:center;font-size:clamp(1.7rem,4vw,2.5rem);
+    font-weight:800;color:#fff;margin-bottom:56px;
+}
+.section-title::after{
+    content:'';display:block;width:56px;height:3px;
+    background:linear-gradient(90deg,#0066ff,#00ccff);
+    border-radius:2px;margin:14px auto 0;
+}
+
+/* ============================
+   ABOUT
+   ============================ */
+.about-grid{
+    display:grid;grid-template-columns:300px 1fr;
+    gap:50px;align-items:center;
+}
+.about-photo-inner{
+    width:260px;height:260px;border-radius:50%;overflow:hidden;
+    margin:0 auto;
+    border:3px solid rgba(0,102,255,.3);
+    box-shadow:0 0 40px rgba(0,102,255,.15);
+}
+.about-photo-inner img{
+    width:100%;height:100%;object-fit:cover;
+}
+.about-info h3{font-size:1.5rem;color:#fff;margin-bottom:4px}
+.about-role{color:#4da6ff;font-size:.95rem;margin-bottom:16px;font-weight:500}
+.about-bio{color:#8896ad;font-size:1rem;margin-bottom:28px}
+.about-stats{display:flex;gap:36px;margin-bottom:24px}
+.stat-box{text-align:center}
+.stat-num{display:block;font-size:1.9rem;font-weight:800;color:#4da6ff}
+.stat-lbl{font-size:.8rem;color:#5a6f8a;text-transform:uppercase;letter-spacing:1px}
+
+.about-tools{display:flex;flex-wrap:wrap;gap:8px}
+.tool-badge{
+    padding:6px 14px;border-radius:20px;font-size:.78rem;font-weight:600;
+    background:rgba(0,102,255,.08);color:#4da6ff;
+    border:1px solid rgba(0,102,255,.15);
+}
+
+/* ============================
+   SERVICES
+   ============================ */
+.services-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:22px;
+}
+.service-card{
+    background:rgba(255,255,255,.02);
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:18px;padding:36px 24px;text-align:center;
+    transition:all .3s;
+}
+.service-card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(0,102,255,.25);
+    box-shadow:0 8px 32px rgba(0,102,255,.1);
+}
+.service-icon{font-size:2.6rem;margin-bottom:18px}
+.service-card h3{font-size:1.05rem;color:#fff;margin-bottom:10px}
+.service-card p{color:#6a7f9a;font-size:.88rem}
+
+/* ============================
+   PORTFOLIO
+   ============================ */
+.portfolio-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:22px;
+}
+.portfolio-card{
+    border-radius:16px;overflow:hidden;
+    background:rgba(255,255,255,.02);
+    border:1px solid rgba(255,255,255,.05);
+    transition:all .3s;
+}
+.portfolio-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.portfolio-thumb{
+    height:190px;display:flex;align-items:center;justify-content:center;
+}
+.portfolio-label{
+    font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.85);
+    text-transform:uppercase;letter-spacing:3px;
+}
+.portfolio-card h4{padding:16px 20px;color:#b0bfcf;font-weight:500;font-size:.92rem}
+
+/* ============================
+   TELEGRAM AGENT
+   ============================ */
+.agent-wrapper{display:flex;justify-content:center}
+.agent-card{
+    max-width:540px;width:100%;
+    background:rgba(255,255,255,.02);
+    border:1px solid rgba(0,102,255,.2);
+    border-radius:24px;padding:44px 36px;
+    position:relative;overflow:hidden;
+}
+.agent-glow{
+    position:absolute;top:-50%;right:-30%;
+    width:300px;height:300px;border-radius:50%;
+    background:rgba(0,102,255,.08);filter:blur(80px);
+    pointer-events:none;
+}
+.agent-header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.agent-icon-box{
+    width:56px;height:56px;border-radius:14px;
+    background:linear-gradient(135deg,#0066ff,#0044dd);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.6rem;flex-shrink:0;
+}
+.agent-header h3{font-size:1.3rem;color:#fff}
+.agent-subtitle{font-size:.85rem;color:#5a6f8a}
+.agent-desc{color:#7a8da5;font-size:.95rem;margin-bottom:24px;line-height:1.7}
+.agent-features{margin-bottom:28px}
+.agent-features li{
+    padding:8px 0;color:#b0bfcf;font-size:.93rem;
+    display:flex;align-items:center;gap:10px;
+}
+.feature-check{
+    color:#00cc88;font-weight:700;font-size:1rem;
+}
+.btn-agent{width:100%;justify-content:center;padding:15px}
+
+/* ============================
+   ACCOUNTS
+   ============================ */
+.accounts-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+.account-card{
+    display:flex;flex-direction:column;align-items:center;text-align:center;
+    padding:40px 24px;border-radius:20px;
+    background:rgba(255,255,255,.02);
+    border:1px solid rgba(255,255,255,.05);
+    transition:all .35s;cursor:pointer;
+}
+.account-card:hover{transform:translateY(-5px)}
+.account-icon-wrap{
+    width:60px;height:60px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:18px;
+}
+.account-icon-wrap svg{width:30px;height:30px;fill:#fff}
+
+.account--ig .account-icon-wrap{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.account--ig:hover{border-color:#dc2743;box-shadow:0 6px 28px rgba(220,39,67,.15)}
+
+.account--yt .account-icon-wrap{background:#ff0000}
+.account--yt:hover{border-color:#ff0000;box-shadow:0 6px 28px rgba(255,0,0,.15)}
+
+.account--tg .account-icon-wrap{background:#0088cc}
+.account--tg:hover{border-color:#0088cc;box-shadow:0 6px 28px rgba(0,136,204,.15)}
+
+.account-card h3{font-size:1.2rem;color:#fff;margin-bottom:4px}
+.account-handle{color:#5a6f8a;font-size:.88rem;margin-bottom:16px}
+.account-cta{
+    font-size:.88rem;font-weight:600;color:#4da6ff;transition:color .3s;
+}
+.account-card:hover .account-cta{color:#7cc4ff}
+
+/* ============================
+   CONTACT
+   ============================ */
+.contact-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:48px;align-items:start;
+}
+.contact-info h3{font-size:1.4rem;color:#fff;margin-bottom:12px}
+.contact-info>p{color:#6a7f9a;margin-bottom:28px;font-size:.95rem}
+
+.contact-links{display:flex;flex-direction:column;gap:16px}
+.contact-item{
+    display:flex;align-items:center;gap:14px;
+    padding:14px 18px;border-radius:14px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.05);
+    transition:all .3s;
+}
+.contact-item:hover{border-color:rgba(0,102,255,.2);background:rgba(0,102,255,.04)}
+.ci-icon{font-size:1.4rem;flex-shrink:0}
+.contact-item strong{display:block;color:#fff;font-size:.9rem}
+.contact-item span{color:#5a6f8a;font-size:.82rem}
+
+.contact-form{display:flex;flex-direction:column;gap:14px}
+.contact-form input,.contact-form textarea{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;padding:14px 18px;font-size:.93rem;
+    color:#d0d8e4;font-family:inherit;outline:none;
+    transition:border-color .3s;
+}
+.contact-form input:focus,.contact-form textarea:focus{border-color:#0066ff}
+.contact-form textarea{resize:vertical}
+.contact-form .btn{align-self:flex-start}
+
+/* ============================
+   FOOTER
+   ============================ */
+.footer{
+    padding:36px 0;
+    border-top:1px solid rgba(255,255,255,.04);
+    background:#03050a;
+}
+.footer-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:16px;
+}
+.footer-logo{font-size:1.4rem;font-weight:900;color:#fff}
+.footer-logo span{color:#0088ff}
+.footer-copy{color:#3d4f66;font-size:.82rem}
+.footer-links{display:flex;gap:20px}
+.footer-links a{color:#5a6f8a;font-size:.85rem;transition:color .3s}
+.footer-links a:hover{color:#4da6ff}
+
+/* ============================
+   RESPONSIVE — TABLET
+   ============================ */
+@media(max-width:900px){
+    .hero-content{grid-template-columns:1fr;text-align:center}
+    .hero-text{align-items:center}
+    .hero-buttons{justify-content:center}
+    .hero-socials{justify-content:center}
+    .hero-image{order:-1}
+    .hero-img-wrapper{max-width:360px}
+
+    .about-grid{grid-template-columns:1fr;text-align:center}
+    .about-stats{justify-content:center}
+    .about-tools{justify-content:center}
+
+    .contact-grid{grid-template-columns:1fr}
+
+    .accounts-grid{grid-template-columns:1fr}
+}
+
+/* ============================
+   RESPONSIVE — MOBILE
+   ============================ */
+@media(max-width:768px){
+    .hamburger{display:flex}
+
+    .nav-links{
+        position:fixed;top:0;right:-100%;width:260px;height:100vh;
+        background:rgba(5,8,15,.97);
+        backdrop-filter:blur(20px);
+        flex-direction:column;padding:80px 32px 40px;gap:22px;
+        transition:right .3s ease;
+        border-left:1px solid rgba(255,255,255,.05);
+    }
+    .menu-toggle:checked ~ .nav-links{right:0}
+    .menu-toggle:checked ~ .hamburger span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .menu-toggle:checked ~ .hamburger span:nth-child(2){opacity:0}
+    .menu-toggle:checked ~ .hamburger span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+    .nav-links a{font-size:1rem}
+
+    .section{padding:70px 0}
+    .section-title{margin-bottom:40px}
+}
+
+@media(max-width:480px){
+    .hero{padding:90px 16px 40px}
+    .hero-name{font-size:2rem}
+    .hero-img-wrapper{max-width:280px}
+
+    .about-photo-inner{width:180px;height:180px}
+    .about-stats{gap:20px}
+    .stat-num{font-size:1.5rem}
+
+    .agent-card{padding:28px 20px}
+
+    .btn{padding:12px 22px;font-size:.88rem}
+
+    .portfolio-grid{grid-template-columns:1fr}
+    .services-grid{grid-template-columns:1fr}
+
+    .footer-inner{flex-direction:column;text-align:center}
+}
